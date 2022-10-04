@@ -132,10 +132,29 @@ public class BasketTest {
 		assertEquals (0, basketToTest.count());
 	}
 
-	//@Test 
-	//negative items
+	@Test 
+	public void negativeItems ()
+	{
+		Basket basketToTest = makeBasket();
+		Item i = new Item("Shampoo",5);
+		basketToTest.addToBasket(i);
+		basketToTest.addToBasket(i);
+		basketToTest.addToBasket(i);
+
+		Item j = new Item ("conditioner", 18);
+		basketToTest.addToBasket(j);
+
+		Item k = new Item ("Soap", 13);
+		basketToTest.addToBasket(k);
+
+		basketToTest.removeAllFromBasket(i);
+		basketToTest.removeFromBasket(i);
+
+		assertEquals (0,basketToTest.countItem(i));
+	}
 
 	//@Test
+	//public void 
 
 
 }
