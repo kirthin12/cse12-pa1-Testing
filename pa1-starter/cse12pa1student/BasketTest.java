@@ -88,7 +88,7 @@ public class BasketTest {
 		basketToTest.removeFromBasket(i);
 
 		assertEquals (4, basketToTest.count());
-		assertEquals (2, basketToTest.countItem(i))
+		assertEquals (2, basketToTest.countItem(i));
 	}
 
 	@Test
