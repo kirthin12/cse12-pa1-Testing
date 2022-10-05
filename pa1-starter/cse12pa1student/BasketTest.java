@@ -198,5 +198,14 @@ public class BasketTest {
 		assertEquals (0,basketToTest.count());
 	}
 
+	@Test
+	public void emptyString ()
+	{
+		Basket basketToTest = makeBasket();
+		Item i = new Item ("", 0);
+		basketToTest.addToBasket (i);
+		assertEquals(0, basketToTest.count());
+	}
+
 
 }
