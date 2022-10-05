@@ -207,5 +207,43 @@ public class BasketTest {
 		assertEquals(0, basketToTest.count());
 	}
 
+	@Test
+	public void addingAlotOfItems ()
+	{
+		Basket basketToTest = makeBasket();
+		Item j = new Item ("Jeans", 10);
+
+		for (int i = 0; i < 10000; i++)
+		{
+			basketToTest.addToBasket(j);
+		}
+		assertEquals(10000, basketToTest.count());
+	}
+
+	@Test
+	public void addingManyDuplicates ()
+	{
+		Basket basketToTest = makeBasket();
+		Item j = new Item ("Jeans", 10);
+		for (int i = 0; i < 4; i++)
+		{
+			basketToTest.addToBasket(j);
+		}
+
+		Item k = new Item ("Soap", 13);
+		basketToTest.addToBasket(k);
+
+		Item l = new Item ("oranges", 22);
+		basketToTest.addToBasket(l);
+
+		Item m = new Item ("medicine", 28);
+		basketToTest.addToBasket(m);
+
+		Item n = new Item ("water", 3);
+		basketToTest.addToBasket(n);
+
+		assertEquals(8, basketToTest.count());
+	}
+
 
 }
