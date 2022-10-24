@@ -245,5 +245,67 @@ public class BasketTest {
 		assertEquals(8, basketToTest.count());
 	}
 
+	@Test
+	public void testCountItem()
+	{
+		Basket basketToTest = makeBasket();
+		Item i = new Item("Shampoo",5);
+		basketToTest.addToBasket(i);
+
+		Item j = new Item ("conditioner", 18);
+		basketToTest.addToBasket(j);
+
+		Item k = new Item ("Soap", 13);
+		basketToTest.addToBasket(k);
+
+		Item l = new Item ("oranges", 22);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+
+		Item m = new Item ("medicine", 28);
+		basketToTest.addToBasket(m);
+		basketToTest.addToBasket(m);
+		basketToTest.addToBasket(m);
+
+		Item n = new Item ("water", 3);
+		basketToTest.addToBasket(n);
+
+		assertEquals(5, basketToTest.countItem(l));
+	}
+
+	@Test
+	public void testCount ()
+	{
+		Basket basketToTest = makeBasket();
+		Item i = new Item("Shampoo",5);
+		basketToTest.addToBasket(i);
+
+		Item j = new Item ("conditioner", 18);
+		basketToTest.addToBasket(j);
+
+		Item k = new Item ("Soap", 13);
+		basketToTest.addToBasket(k);
+
+		Item l = new Item ("oranges", 22);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+		basketToTest.addToBasket(l);
+
+		Item m = new Item ("medicine", 28);
+		basketToTest.addToBasket(m);
+		basketToTest.addToBasket(m);
+		basketToTest.addToBasket(m);
+
+		Item n = new Item ("water", 3);
+		basketToTest.addToBasket(n);
+
+		assertEquals(12, basketToTest.count());
+	}
+
 
 }
